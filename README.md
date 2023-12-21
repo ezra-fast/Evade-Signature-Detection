@@ -1,0 +1,3 @@
+# Evading AV in C
+
+This is my very first attempt to evade signature based AV detection. My approach to the problem is to generate a callback shellcode payload using an exploitation framework, encrypt that payload with AES-256, decrypt that payload during runtime, and execute it in its own memory region. Aside from the generated shellcode this project is pure C. The AES-256 implementation is taken from elsewhere. This code must be compiled against OpenSSL, which itself has to be built from source. When using BasicCallback.c to test callback shellcode, it is imperative to compile that code with an executable stack and no stack protection.
